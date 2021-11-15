@@ -29,12 +29,12 @@ module PolicyOcr
 			# You will want it to match the hash format of your NUMS so they can be matched and converted later. We will use the map method again to achieve this.
 			# After mapping you will want to (&:join) them together to form a hashed number in the format of NUMBERS. 
       .map(&:join)
-			#
+			# Map again to match the NUMS pipe/underscores.
 			.map { | number | NUMS[number]}
+			# Join it together to get all the numbers together and then convert string to integer.
 			.join.to_i
 		end
 	end
-
 end
 
 #Displays the program on the console
