@@ -17,8 +17,8 @@ module PolicyOcr
 	def self.policy_converter(policy_numbers)
 		#Open and read from a file one line at a time (for bigger files.)
 		file_data = File.read("policies").split
-		File.foreach("policy_numbers") { |line| puts line }
-
+		file_data.foreach("policy_numbers") { |line| puts line }
+		
 	end
 
 end
