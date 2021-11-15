@@ -20,8 +20,10 @@ module PolicyOcr
 		file_info.foreach("policy_numbers") { |line| puts line }
 		#Split the lines using the split method and define the number of lines by 4
 		split_line = file_info.split("\n").each_slice(4)
-		# Map each of the split lines
-		digits = split_line.map{ |new_lines| new_lines }
+		# Map each of the split lines and then map again to scan the single lines set by 3
+		digits = split_line.map{ | new_lines | new_lines}.map{ | single_line | single_line.scan(/.../)}
+		
+		}
 	end
 
 end
