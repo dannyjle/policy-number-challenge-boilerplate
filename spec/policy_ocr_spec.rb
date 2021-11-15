@@ -18,7 +18,7 @@ describe PolicyOcr do
                 444444444, 555555555, 666666666, 777777777,
                 888888888, 999999999, 123456789
               ]
-        expect(PolicyOcr.policy_converter('spec/fixtures/sample.txt')).to eq(arr)
+        expect(PolicyOcr.policy_converter('spec/fixtures/sample.txt')).to eq(array)
       end
     end
   end
