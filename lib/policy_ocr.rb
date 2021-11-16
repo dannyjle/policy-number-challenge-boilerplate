@@ -1,6 +1,5 @@
 module PolicyOcr
 #Create a hash of the numbers in pipe/underscore form.
-
 NUMS = {
 ' _ | ||_|   ' => '0',
 '     |  |   ' => '1',
@@ -22,8 +21,7 @@ NUMS = {
 		File.foreach("../spec/fixtures/sample.txt") { |line| puts line }
 		# Each_slice the lines and define the number of lines by 4 then turn it into an array where we will then map into the array twice to get our rows.
 		# Using the Scan method we can set it to 3 collums.
-		split_line = @file_info.each_slice(4).map do | row_of_numbers |
-        converted = row_of_numbers.map { | string | string.scan(/.{1,3}/) }
+		split_line = @file_info.each_slice(4).map do | row_of_numbers | row_of_numbers.map { | string | string.scan(/.{1,3}/) }
 			# Transpose this will convert any arguments to arrays, then merge elements of self with corresponding elements from each argument.
 			.transpose
 			# You will want it to match the hash format of your NUMS so they can be matched and converted later. We will use the map method again to achieve this.
